@@ -1,19 +1,17 @@
 
 # Setup Docker Laravel 11 com PHP 8.3
-[Assine a Academy, e Seja VIP!](https://academy.especializati.com.br)
 
 ### Passo a passo
 Clone Repositório
 ```sh
-git clone -b laravel-11-with-php-8.3 https://github.com/especializati/setup-docker-laravel.git app-laravel
+git clone https://github.com/eduardohor/orders-web-service
 ```
 ```sh
 cd app-laravel
 ```
 
 Suba os containers do projeto
-```sh
-docker-compose up -d
+```sh docker-compose up -d
 ```
 
 
