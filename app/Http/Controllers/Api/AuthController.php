@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\AuthRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AuthController extends Controller
 {
@@ -24,6 +26,11 @@ class AuthController extends Controller
                 'token_type' => 'Bearer'
             ]);
         }
+
+        DB::table('login_attempts')->insert([
+            'ip_address' => $request->ip(),
+            'attempted_at' => Carbon::now()
+        ]);
 
         return response()->json([
             'message' => 'As credenciais fornecidas estão incorretas'
